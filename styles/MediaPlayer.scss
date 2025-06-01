@@ -1,0 +1,70 @@
+@use "sass:color";
+
+@import "./colors.scss";
+
+window {
+	all: unset;
+}
+
+box.MediaPlayer {
+	box.cover-art {
+		min-width: 64px;
+		min-height: 64px;
+		border-radius: $radius;
+		background-size: contain;
+		background-position: center;
+
+		border: 1px solid color.adjust($fg, $alpha: -0.65);
+	}
+
+	label.title {
+		font-weight: bold;
+		font-size: 1.1em;
+	}
+
+	scale {
+		padding: 0;
+		margin: 0.4rem 0;
+
+		trough {
+			min-height: 8px;
+		}
+
+		highlight {
+			background-color: $fg;
+		}
+
+		slider {
+			all: unset;
+		}
+	}
+
+	centerbox.actions {
+		font-size: 0.8rem;
+
+		button {
+			min-width: 0;
+			min-height: 0;
+			padding: 0.4rem;
+			margin: 0 0.2rem;
+
+			background-color: color.adjust($fg, $alpha: -0.93);
+
+			&:hover {
+				background-color: color.adjust($fg, $alpha: -0.77);
+			}
+		}
+	}
+}
+
+.BarContainer {
+	min-width: 100px;
+
+	/* min-height: 333px; */
+}
+
+.Bars {
+	background-color: color.adjust($fg, $alpha: -0.77);
+	border-radius: 2px;
+	margin: 1px;
+}

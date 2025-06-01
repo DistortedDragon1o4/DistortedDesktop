@@ -1,0 +1,55 @@
+@use "sass:color";
+
+@import "./colors.scss";
+
+window.Dock {
+	transition: 10ms;
+	transition-timing-function: linear;
+
+	$dockSpacing: 3px;
+	$dockItemSize: 32px;
+
+	label {
+		font-weight: normal;
+	}
+
+	.DockMouseArea {
+		transition: 10ms;
+		transition-timing-function: linear;
+	}
+
+	.DockContainer {
+		/* min-width: 800px; */
+		/* margin: 0 30px 5px 30px; */
+		margin: 10px;
+		background-color: $bg;
+		border: 1.5px solid transparent;
+		background:
+			linear-gradient(
+					250deg,
+					color.adjust($bg, $alpha: -0.5),
+					color.adjust($bg, $alpha: -0.23)
+				)
+				padding-box,
+			$border-gradient border-box;
+		border-radius: 1.5 * $radius;
+		padding: $dockSpacing;
+	}
+
+	.DockElement {
+		margin: $dockSpacing;
+		border-radius: $radius;
+		background-color: color.adjust($fg, $alpha: -0.93);
+
+		min-width: 32px;
+		min-height: 44px;
+
+		&:hover {
+			background-color: color.adjust($fg, $alpha: -0.78);
+		}
+	}
+
+	.DockIcon {
+		font-size: 36px;
+	}
+}

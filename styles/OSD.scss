@@ -1,0 +1,38 @@
+@use "sass:color";
+
+@import "./colors.scss";
+
+window.OSD {
+	box.OSD {
+		border: 1px solid transparent;
+		background:
+			linear-gradient(
+					250deg,
+					color.adjust($bg, $alpha: -0.5),
+					color.adjust($bg, $alpha: -0.23)
+				)
+				padding-box,
+			$border-gradient border-box;
+		border-radius: 32px;
+		padding: 13px 16px;
+		min-width: 200px;
+	}
+
+	icon {
+		font-size: 2rem;
+	}
+
+	label {
+		font-size: 1.5rem;
+	}
+
+	levelbar {
+		trough {
+			margin: 1 0.8rem;
+		}
+
+		block {
+			min-height: 8px;
+		}
+	}
+}

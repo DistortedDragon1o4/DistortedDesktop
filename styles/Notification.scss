@@ -1,0 +1,157 @@
+@use "sass:string";
+@use "sass:color";
+
+@import "./colors.scss";
+
+@function gtkalpha($c, $a) {
+	@return string.unquote("alpha(#{$c},#{$a})");
+}
+
+// https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
+/* $fg: #{"@theme_fg_color"};
+$bg: #{"@theme_bg_color"}; */
+$error: red;
+
+window.NotificationPopups {
+	all: unset;
+}
+
+eventbox.Notification {
+	transition: 200ms;
+
+	&:first-child > box {
+		/* margin-top: 1rem; */
+	}
+
+	&:last-child > box {
+		margin-bottom: 1rem;
+	}
+
+	// eventboxes can not take margins so we style its inner box instead
+	> box {
+		min-width: 300px;
+		margin: 10px 10px 0px 0px;
+		border: 1px solid transparent;
+		background:
+			linear-gradient(
+					250deg,
+					color.adjust($bg, $alpha: -0.5),
+					color.adjust($bg, $alpha: -0.23)
+				)
+				padding-box,
+			$border-gradient border-box;
+		border-radius: 1.5 * $radius;
+	}
+
+	&.critical > box {
+		/* border: 1pt solid gtkalpha($error, 0.4); */
+		background:
+			linear-gradient(
+					250deg,
+					color.adjust($error, $alpha: -0.65),
+					color.adjust($error, $alpha: -0.78)
+				)
+				padding-box,
+			linear-gradient(
+					250deg,
+					color.adjust($error, $alpha: -0.65),
+					color.adjust($error, $alpha: -0.78)
+				)
+				border-box,
+			$border-gradient border-box;
+
+		.header {
+			.app-name {
+				color: color.adjust($fg, $alpha: -0.45);
+			}
+
+			.app-icon {
+				color: gtkalpha($error, 0.6);
+			}
+		}
+	}
+
+	.header {
+		padding: 0.5rem;
+		color: color.adjust($fg, $alpha: -0.45);
+
+		.app-icon {
+			font-size: 1rem;
+			margin: 0 0.4rem;
+		}
+
+		.app-name {
+			font-size: 1rem;
+			margin-right: 0.3rem;
+			font-weight: bold;
+
+			&:first-child {
+				margin-left: 0.4rem;
+			}
+		}
+
+		.time {
+			font-size: 1rem;
+			margin: 0 0.4rem;
+		}
+
+		button {
+			font-size: 1rem;
+			background: none;
+			padding: 0.2rem;
+			min-width: 0;
+			min-height: 0;
+		}
+	}
+
+	separator {
+		margin: 0 0.4rem;
+		background-color: gtkalpha($fg, 0.1);
+	}
+
+	.content {
+		margin: 12px;
+		margin-top: 0.5rem;
+
+		.summary {
+			font-size: 1.2rem;
+			color: $fg;
+		}
+
+		.body {
+			color: gtkalpha($fg, 0.8);
+		}
+
+		.image {
+			border: 1px solid gtkalpha($fg, 0.02);
+			margin-right: 0.5rem;
+			border-radius: 9px;
+			min-width: 100px;
+			min-height: 100px;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+
+	.actions {
+		margin: 12px;
+		margin-top: 0;
+
+		button {
+			background-color: color.adjust($fg, $alpha: -0.93);
+			margin: 0 4px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&:hover {
+				background-color: color.adjust($fg, $alpha: -0.77);
+			}
+		}
+	}
+}

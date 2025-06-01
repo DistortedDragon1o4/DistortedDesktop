@@ -1,0 +1,257 @@
+@use "sass:color";
+
+@import "./colors.scss";
+
+window.SysutilsMenu {
+	border: none;
+	box-shadow: none;
+	color: $fg;
+	font-size: 1em;
+	font-weight: normal;
+	outline-color: #00000000;
+
+	transition: 10ms;
+
+	box {
+		margin: 4px;
+	}
+
+	label {
+		font-weight: normal;
+	}
+
+	button {
+		outline-color: #00000000;
+		&:focus {
+			border-color: #00000000;
+			box-shadow: none;
+		}
+	}
+
+	viewport {
+		border: none;
+	}
+
+	.SysutilsContainer {
+		margin: 10px;
+		border: 1px solid transparent;
+		background:
+			linear-gradient(
+					250deg,
+					color.adjust($bg, $alpha: -0.5),
+					color.adjust($bg, $alpha: -0.23)
+				)
+				padding-box,
+			$border-gradient border-box;
+		border-radius: 1.5 * $radius;
+		min-width: 300px;
+		padding: 0;
+	}
+
+	.SysutilsContainerBottom {
+		margin: 0 10px 10px 0;
+		border: 1px solid transparent;
+		background:
+			linear-gradient(
+					250deg,
+					color.adjust($bg, $alpha: -0.5),
+					color.adjust($bg, $alpha: -0.23)
+				)
+				padding-box,
+			$border-gradient border-box;
+		border-radius: 1.5 * $radius;
+		min-width: 300px;
+		padding: 0;
+	}
+
+	.PowButtonsBox {
+		font-size: 24px;
+		margin: 10px 5px 10px 5px;
+	}
+
+	.PowButtons {
+		padding: 4px;
+		background-color: color.adjust($fg, $alpha: -0.93);
+		margin: 6px 0 6px 6px;
+		border-radius: $radius - 2px;
+
+		&:hover {
+			background-color: color.adjust($fg, $alpha: -0.87);
+		}
+	}
+
+	.Pfp {
+		background-image: url("./assets/pfp.png");
+		min-width: 52px;
+		min-height: 52px;
+		background-size: contain;
+		background-position: center;
+		font-size: 50px;
+		border-radius: $radius;
+
+		border: 1px solid color.adjust($fg, $alpha: -0.65);
+	}
+
+	.Uptime {
+		font-size: 0.7rem;
+	}
+
+	.AudioNBriteBox {
+		background-color: color.adjust($fg, $alpha: -0.91);
+		margin: 0 8px 5px 8px;
+		border-radius: $radius;
+	}
+
+	.slider {
+		padding: 0 0 0px 8px;
+		margin: 0 4px 0 4px;
+
+		trough {
+			background-color: color.adjust($fg, $alpha: -0.8);
+			border-radius: $radius;
+		}
+
+		highlight {
+			background-color: $accent;
+			min-height: 0.5em;
+			border-radius: $radius;
+		}
+
+		slider {
+			background-color: #ffffff00;
+			box-shadow: none;
+		}
+	}
+
+	.AudioButton {
+		background-color: #00000000;
+		padding: 2px 0 2px 0;
+		margin: 0;
+
+		&:hover {
+			-gtk-icon-shadow:
+				0 0 5px color.adjust($fg, $alpha: -0.77),
+				0 0 10px color.adjust($fg, $alpha: -0.77);
+		}
+	}
+
+	.ControlButton {
+		background-color: color.adjust($fg, $alpha: -0.91);
+		margin: 0 6px 6px 4px;
+		border-radius: $radius;
+		font-weight: normal;
+		padding: 4px 6px 4px 6px;
+	}
+
+	.ControlButtonEnabled {
+		background-color: color.adjust($fg, $alpha: -0.91);
+		margin: 0 0 6px 4px;
+		border-radius: $radius 0 0 $radius;
+		font-weight: normal;
+		/* min-width: 128px; */
+		padding: 4px 6px 4px 6px;
+	}
+
+	.SysUtilsMenuButton {
+		padding: 2px 5px 2px 5px;
+		border-radius: $radius;
+		background-color: color.adjust($fg, $alpha: -0.93);
+		margin: 0 0 0 4px;
+
+		&:hover {
+			background-color: color.adjust($fg, $alpha: -0.87);
+		}
+	}
+
+	.SysUtilsMenuButtonLeft {
+		padding: 0 6px 0 6px;
+		border-radius: $radius - 3px;
+		background-color: color.adjust($fg, $alpha: -0.93);
+		margin: 0 4px 0 0;
+
+		&:hover {
+			background-color: color.adjust($fg, $alpha: -0.87);
+		}
+	}
+
+	.SysUtilsMenuTogglebutton {
+		padding: 4px;
+		background-color: color.adjust($fg, $alpha: -0.88);
+		margin: 0 0 0 4px;
+
+		&:checked {
+			background-color: $accent;
+		}
+	}
+
+	.SysUtilsMenuScrollableBox {
+		/* min-height: 150px; */
+	}
+
+	.SysUtilsMenuItems {
+		margin: 2px;
+	}
+
+	.SysUtilsMenuChoiceButton {
+		font-size: 0.9em;
+		padding: 0px 5px 0px 5px;
+		border-radius: $radius - 3px;
+		background-color: color.adjust($fg, $alpha: -0.95);
+		margin: 0 0 4px 0;
+
+		&:hover {
+			background-color: color.adjust($fg, $alpha: -0.93);
+		}
+	}
+
+	.SysUtilsMenuEntry {
+		font-size: 0.9em;
+		padding: 0px 5px 0px 5px;
+		border-radius: $radius - 3px;
+		background-color: color.adjust($fg, $alpha: -0.97);
+		margin: 0 4px 0 0;
+
+		&:hover {
+			background-color: color.adjust($fg, $alpha: -0.94);
+		}
+
+		&:focus {
+			border-color: $accent;
+			box-shadow: none;
+		}
+	}
+
+	.SysUtilsMenuContainer {
+		border-radius: $radius;
+		background-color: color.adjust($fg, $alpha: -0.91);
+		margin: 4px 8px 10px 0;
+	}
+
+	.SysUtilsMenuContainerTop {
+		border-radius: 0 $radius $radius $radius;
+		background-color: color.adjust($fg, $alpha: -0.91);
+		margin: 4px 8px 10px 0;
+	}
+
+	.SysUtilsMenuContainerBottom {
+		border-radius: $radius $radius $radius 0;
+		background-color: color.adjust($fg, $alpha: -0.91);
+		margin: 4px 8px 10px 0;
+	}
+
+	.NotPlaying {
+		padding: 1rem;
+
+		icon {
+			font-size: 6em;
+		}
+
+		label {
+			font-size: 1.2em;
+		}
+	}
+
+	.Bars {
+		border-radius: $radius;
+	}
+}

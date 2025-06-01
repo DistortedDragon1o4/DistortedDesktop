@@ -1,0 +1,47 @@
+[
+    {
+        "path": "firefox.desktop",
+        "name": "Firefox",
+        "icon": "firefox"
+    },
+    {
+        "path": "org.gnome.Nautilus.desktop",
+        "name": "Files",
+        "icon": "org.gnome.Nautilus"
+    },
+    {
+        "path": "org.gnome.Evince.desktop",
+        "name": "Document Viewer",
+        "icon": "org.gnome.Evince"
+    },
+    {
+        "path": "kitty.desktop",
+        "name": "kitty",
+        "icon": "kitty"
+    },
+    {
+        "path": "dev.zed.Zed.desktop",
+        "name": "Zed",
+        "icon": "zed"
+    },
+    {
+        "path": "net.nokyan.Resources.desktop",
+        "name": "Resources",
+        "icon": "deepin-system-monitor"
+    },
+    {
+        "path": "gimp.desktop",
+        "name": "GNU Image Manipulation Program",
+        "icon": "gimp"
+    },
+    {
+        "path": "blender.desktop",
+        "name": "Blender",
+        "icon": "blender"
+    },
+    {
+        "path": "libreoffice-startcenter.desktop",
+        "name": "LibreOffice",
+        "icon": "libreoffice-startcenter"
+    }
+]

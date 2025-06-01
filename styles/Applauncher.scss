@@ -1,0 +1,138 @@
+@use "sass:string";
+@use "sass:color";
+
+@import "./colors.scss";
+
+@function gtkalpha($c, $a) {
+	@return string.unquote("alpha(#{$c},#{$a})");
+}
+
+window#Launcher {
+	all: unset;
+
+	box.Applauncher {
+		border: 1px solid transparent;
+		background:
+			linear-gradient(
+					250deg,
+					color.adjust($bg, $alpha: -0.5),
+					color.adjust($bg, $alpha: -0.23)
+				)
+				padding-box,
+			$border-gradient border-box;
+		border-radius: 1.5 * $radius;
+		margin: 10px;
+		/* padding: 0.8rem; */
+		/* box-shadow: 2px 3px 8px 0 gtkalpha(black, 0.4); */
+
+		button {
+			outline-color: #00000000;
+			&:focus {
+				border-color: #00000000;
+				box-shadow: none;
+			}
+		}
+
+		entry {
+			margin: 10px;
+			background-color: color.adjust($fg, $alpha: -0.93);
+
+			&:hover {
+				background-color: color.adjust($fg, $alpha: -0.88);
+			}
+
+			&:focus {
+				background-color: color.adjust($fg, $alpha: -0.88);
+				border-color: color.adjust($accent, $alpha: -0.23);
+				box-shadow: none;
+			}
+		}
+
+		scrollable {
+			margin: 0px 0px 8px 0px;
+		}
+
+		viewport {
+			outline: none;
+			border: none;
+		}
+
+		.AppButton {
+			margin: 2px 0px 2px 10px;
+			min-width: 0;
+			min-height: 0;
+			padding: 0.5rem;
+			background-color: color.adjust($fg, $alpha: -0.93);
+			border-radius: $radius 0 0 $radius;
+
+			&:hover {
+				background-color: color.adjust($fg, $alpha: -0.88);
+			}
+
+			icon {
+				font-size: 3em;
+				margin-right: 0.3rem;
+			}
+
+			label.name {
+				font-weight: bold;
+				font-size: 1.1em;
+			}
+
+			label.description {
+				color: gtkalpha($fg, 0.8);
+			}
+
+			&:focus {
+				background-color: color.adjust($fg, $alpha: -0.76);
+				box-shadow: none;
+			}
+		}
+
+		.PinAppButton {
+			margin: 2px 10px 2px 0px;
+			min-width: 0;
+			min-height: 0;
+			padding: 0.5rem;
+			background-color: color.adjust($fg, $alpha: -0.93);
+			border-radius: 0 $radius $radius 0;
+
+			&:hover {
+				background-color: color.adjust($fg, $alpha: -0.88);
+			}
+
+			icon {
+				font-size: 20px;
+				margin: 0 4px 0 4px;
+			}
+
+			label.name {
+				font-weight: bold;
+				font-size: 1.1em;
+			}
+
+			label.description {
+				color: gtkalpha($fg, 0.8);
+			}
+
+			&:focus {
+				background-color: color.adjust($fg, $alpha: -0.76);
+				box-shadow: none;
+			}
+		}
+
+		box.not-found {
+			padding: 1rem;
+
+			icon {
+				font-size: 6em;
+				color: gtkalpha($fg, 0.7);
+			}
+
+			label {
+				color: gtkalpha($fg, 0.9);
+				font-size: 1.2em;
+			}
+		}
+	}
+}

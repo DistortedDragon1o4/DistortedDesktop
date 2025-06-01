@@ -1,0 +1,143 @@
+@use "sass:color";
+
+@import "./colors.scss";
+
+window.PowerMenu {
+	transition: 10ms;
+	transition-timing-function: linear;
+
+	label {
+		font-weight: normal;
+	}
+
+	.PowerMenuBg {
+		background: linear-gradient(150deg, #33dd5514, #33eeee11, #2233ee18)
+			border-box;
+	}
+
+	.ButtonArea {
+		/* background-color: color.adjust($bg, $alpha: -0.44); */
+		/* border: 0.5px solid color.adjust($fg, $alpha: -0.74); */
+		/* border: 1.5px solid transparent; */
+		/* background:
+			linear-gradient($bg, $bg) padding-box,
+			$border-gradient border-box; */
+		/* padding: 8px;
+		border-radius: 32px; */
+		background: none;
+	}
+
+	.PowerMenuButton {
+		background-color: color.adjust(
+			color.mix($bg, #23ccf3, 0.2),
+			$alpha: -0.85
+		);
+
+		transition: 75ms;
+		min-width: 160px;
+		min-height: 256px;
+		border-radius: 0px;
+		margin: 64px 0px 64px 0px;
+
+		border-top: 1px solid color.adjust($fg, $alpha: -0.8);
+		border-bottom: 1px solid color.adjust($fg, $alpha: -0.8);
+
+		&:hover {
+			min-height: 352px;
+			border-radius: 24px;
+			margin: 0px;
+			font-size: 3.5em;
+			border: 1px solid transparent;
+			background:
+				linear-gradient(
+						250deg,
+						color.adjust($bg, $alpha: -0.7),
+						color.adjust($bg, $alpha: -0.53)
+					)
+					padding-box,
+				$border-gradient border-box;
+		}
+
+		font-size: 3em;
+	}
+
+	.PowerMenuButtonLeft {
+		background-color: color.adjust(
+			color.mix($bg, #23ccf3, 0.2),
+			$alpha: -0.85
+		);
+
+		transition: 75ms;
+		min-width: 160px;
+		min-height: 256px;
+		border-radius: 24px 0px 0px 24px;
+		margin: 64px 0px 64px 0px;
+
+		border-top: 1px solid color.adjust($fg, $alpha: -0.8);
+		border-bottom: 1px solid color.adjust($fg, $alpha: -0.8);
+		border-left: 1px solid color.adjust($fg, $alpha: -0.8);
+
+		&:hover {
+			min-height: 352px;
+			border-radius: 24px;
+			margin: 0px;
+			font-size: 3.5em;
+			border: 1px solid transparent;
+			background:
+				linear-gradient(
+						250deg,
+						color.adjust($bg, $alpha: -0.7),
+						color.adjust($bg, $alpha: -0.53)
+					)
+					padding-box,
+				$border-gradient border-box;
+		}
+
+		font-size: 3em;
+	}
+
+	.PowerMenuButtonRight {
+		background-color: color.adjust(
+			color.mix($bg, #23ccf3, 0.2),
+			$alpha: -0.85
+		);
+
+		transition: 75ms;
+		min-width: 160px;
+		min-height: 256px;
+		border-radius: 0px 24px 24px 0px;
+		margin: 64px 0px 64px 0px;
+
+		border-top: 1px solid color.adjust($fg, $alpha: -0.8);
+		border-bottom: 1px solid color.adjust($fg, $alpha: -0.8);
+		border-right: 1px solid color.adjust($fg, $alpha: -0.8);
+
+		&:hover {
+			min-height: 352px;
+			border-radius: 24px;
+			margin: 0px;
+			font-size: 3.5em;
+			border: 1px solid transparent;
+			background:
+				linear-gradient(
+						250deg,
+						color.adjust($bg, $alpha: -0.7),
+						color.adjust($bg, $alpha: -0.53)
+					)
+					padding-box,
+				$border-gradient border-box;
+		}
+
+		font-size: 3em;
+	}
+
+	.BigButton {
+		transition: 200ms;
+		min-width: 256px;
+		min-height: 256px;
+		margin: 12px;
+		border-radius: 16px;
+
+		font-size: 6em;
+	}
+}
